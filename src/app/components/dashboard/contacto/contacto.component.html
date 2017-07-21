@@ -1,0 +1,47 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+          <div class="header inline-block align-baseline">
+              <h4 class="title inline-block align-baseline">Contactos</h4>
+              <button class="button-cool" style="width:150px"
+              [routerLink]="['/dashboard/contacto', 'nuevo']">Nuevo Contacto</button>
+          </div>
+          <div class="content table-responsive table-full-width">
+              <table class="table table-hover table-striped">
+                  <thead>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>Cambios</th>
+                  </thead>
+                  <tbody *ngFor="let contacto of contactos">
+                      <tr>
+                        <td>1</td>
+                        <td>{{ contacto.contacto_nombre }}</td>
+                        <td>{{ contacto.contacto_apellido }}</td>
+                        <td>{{ contacto.contacto_telefono }}</td>
+                        <td>
+                          <div class="btn-group">
+                            <a href=""
+                              (click)="borrarContacto(contacto.contacto_id)"
+                               class="cool-let" style="width:90px">
+                              Eliminar
+                            </a>
+                            <a href=""
+                              [routerLink]="['/dashboard/contacto', contacto.contacto_id]"
+                               class="cool-let" style="width:90px" >
+                              Ver mas
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

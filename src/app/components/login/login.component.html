@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="info">
+    <h1>Iniciar Sesión</h1>
+  </div>
+</div>
+
+<div class="form">
+  <form class="login-form" [formGroup]="formularioLogin" (ngSubmit)="iniciarSesion()">
+          <div class="form-group">
+            <input type="text"
+              class="input-cool"
+              placeholder="Ingrese su nick"
+              formControlName="nick">
+          </div>
+          <div class="form-group">
+            <input type="password"
+              class="input-cool"
+              placeholder="Ingrese su contrasena "
+              formControlName="contrasena">
+          </div>
+          <button type="submit"
+            class="button-cool"
+            [disabled]="!formularioLogin.valid">
+            Iniciar Sesion
+          </button>
+          <p class="message">Not registered? <a [routerLink]="['/signup']">Create an account</a></p>
+        </form>
+</div>

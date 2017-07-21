@@ -1,0 +1,37 @@
+
+<div class="alert alert-success " role="alert" *ngIf="notificacion.estado">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {{ notificacion.mensaje }}
+</div>
+
+
+  <div class="container">
+    <div class="info">
+      <h1>Registrarse</h1>
+    </div>
+  </div>
+  <div class="form">
+    <form [formGroup]="formularioSignUp" (ngSubmit)="registrar()">
+      <div class="form-group">
+        <input type="text"
+          class="input-cool"
+          placeholder="Ingrese su nick"
+          formControlName="nick">
+      </div>
+      <div class="form-group">
+        <input type="password"
+          class="input-cool"
+          placeholder="Ingrese su contrasena"
+          formControlName="contrasena">
+      </div>
+        <button type="submit"
+          class="button-cool"
+          [disabled]="!formularioSignUp.valid">
+          Registrar
+        </button>
+          <p class="message">Already have an account? <a [routerLink]="['/loin']">Log in</a></p>
+    </form>
+  </div>
